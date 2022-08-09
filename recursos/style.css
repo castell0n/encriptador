@@ -1,0 +1,434 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #000;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    width: 100%;
+    height: 4rem;
+    padding: 10px;
+    overflow: hidden;
+    background: #000;
+    outline: 1px solid #00ffff;
+    box-shadow: 0 0 20px 0 #00ffff;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    animation: hede 1s;
+}
+@keyframes hede {
+    0%{
+        transform: translateY(-64px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+header .logo {
+    position: absolute;
+    left: 2rem;
+    width: 4rem;
+    height: 3rem;
+    padding: 4px;
+}
+
+#contenedor {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+#contenedor .cajas {
+    background: #111;
+    width: 100%;
+    height: 36rem;
+    outline: 1px solid;
+    position: relative;
+    outline: 1px solid #00ffff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+}
+#contenedor .cajatextara {
+    width: 35%;
+    background: none;
+    outline: none;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#contenedor .cajatextara .textara {
+    border-radius: 10px;
+    border: 0;
+    background: #111;
+    color: #00ffff;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: 1px solid #00ffff;
+}
+#contenedor .cajatextara .textara:focus {
+    outline: 1px solid #00ffff;
+    background: #111;
+    color: #ffffff;
+    animation: textareaouline 2s infinite;
+}
+@keyframes textareaouline {
+    0% {
+        outline: 1px solid #00ffff;}
+    50% {
+        outline: 1px solid #ff0000;}
+    100% {
+        outline: 1px solid #008000;}
+}
+
+#contenedor .cajatextara .caja-botones {
+    text-align: center;
+    vertical-align: bottom;
+    background: #000;
+    outline: 1px solid #00ffff;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+#contenedor .cajatextara .caja-botones .botones {
+    width: 100%;
+    height: 2.5rem;
+    border: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #00ffff;
+    color: #000;
+    text-align: center;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#contenedor .cajatextara .caja-botones .botones:hover {
+    background: #111;
+    outline: 1px solid#00ffff;
+    color: #00ffff00;
+}
+#contenedor .cajatextara .caja-botones .botones:active {
+    background: #008000;
+    outline: 1px solid#00ffff;
+    color: #00000000;
+}
+
+/* estilo de los svg de los botones */
+#contenedor .cajatextara .caja-botones .botones svg {
+    width: 20px;
+    height: 20px;
+    color: #00ffff;
+    transform: translateY(-40px);
+    position: absolute;
+    transition: .4s;
+}
+#contenedor .cajatextara .caja-botones .botones:hover svg {
+    transform: translateY(0px);
+}
+/* #contenedor .cajatextara .encriptar {
+    // por si se necesitan ajustes mas adelante
+} */
+/* #contenedor .cajatextara .reset {
+    // por si se necesitan ajustes mas adelante
+} */
+/* #contenedor .cajatextara .desencriptar {
+    // por si se necesitan ajustes mas adelante
+} */
+
+#contenedor .cajas:nth-of-type(1) {
+    order: 1;
+}
+#contenedor .cajas:nth-of-type(2) {
+    order: 2;
+    outline: 0;
+    background: none;
+}
+#contenedor .cajas:nth-of-type(3) {
+    order: 3;
+}
+
+
+/* ajustes de encriptar */
+#contenedor .cajas .titulo {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    width: -webkit-fill-available;
+    height: 2rem;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contenedor .cajas .texto {
+    width: 100%;
+    height: 90%;
+    max-height: 90%;
+    color: #ffffff;
+    overflow: auto;
+    text-align: start;
+    padding: 10px;
+    outline: 1px solid #00ffff;
+}
+#contenedor .cajas .conten1 {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+#contenedor .cajas .conten1 .copiar {
+    width: 8rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: #000;
+    border: 0;
+    background: #00ffff;
+    cursor: pointer;
+    padding-right: 20px;
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contenedor .cajas .conten1 .copiar:hover {
+    box-shadow: 0 0 5px 0#00ffff;
+    background: #111;
+    color: #00ffff;
+    border: 0;
+}
+#contenedor .cajas .conten1 .copiar svg {
+    width: 20px;
+    height: 20px;
+    transition: .4s;
+    padding: 10px;
+}
+#contenedor .cajas .conten1 .copiar:hover svg {
+    color: #00ffff;
+    padding: 0;
+    margin-right: 10px;
+}
+#contenedor .cajas .conten1 .copiartexti {
+    left: 10px;
+}
+#contenedor .cajas .conten1 .copiartextd {
+    right: 10px;
+}
+#contenedor .cajas .conten1 .contador {
+    font-size: 25px;
+    right: 20px;
+    bottom: 8px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: #00ffff;
+    animation: contar 2s infinite;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes contar {
+    0% {
+        color: #00ffff;
+       }
+    50% {
+        color: #ff0000;
+       }
+    100% {
+        color: #008000;
+       }
+}
+
+
+
+
+
+
+
+
+/* arera estilo de responsive */
+/* ajuste de 1024px a 800px */
+@media screen and (max-width: 1024px){
+    #contenedor {
+        margin-top: 0;
+    }
+    #contenedor .cajas {
+        height: 32rem;
+    }
+    #contenedor .cajas .titulo{
+        font-size: 18px;
+    }
+
+    #contenedor .cajatextara {
+        width: 40%;
+    }
+
+    #contenedor .cajatextara .caja-botones .limpiar {
+        position: fixed;
+        top: 70vh;
+        right: 0;
+        color: #00ffff;
+        opacity: 20%;
+        border: 0;
+        border-radius: 10px 0 0 10px;
+        outline: none;
+        width: 40px;
+        height: 40px;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar:hover {
+        color: #00ffff;
+        opacity: 100%;
+        background: #00ffff;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar svg {
+        transform: translate(0);
+        color: #000;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar:hover svg {
+        color: #000;
+        transform: translate(0px);
+    }
+}
+
+/* ajuste de 800px a 425px */
+@media screen and (max-width: 800px){
+    #contenedor {
+        margin-top: 0;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    #contenedor .cajas .titulo {
+        font-size: 15px;
+    }
+
+    #contenedor .cajatextara {
+        width: 60%;
+    }
+}
+
+/* ajuste de 425px a 620px */
+@media screen and (max-width: 620px) {
+    #contenedor {
+        flex-direction: column;
+        margin-top: 0;
+        padding: 15px;
+        gap: 10px;
+    }
+    #contenedor .cajas {
+        height: 20rem;
+        align-items: center;
+    }
+
+    #contenedor .cajas .titulo {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #contenedor .cajatextara {
+        width: 100%;
+        height: 12rem;
+        padding: 10px 0px;
+        gap: 15px;
+    }
+    #contenedor .cajatextara .caja-botones {
+        margin: 0;
+        height: 40%;
+        gap: 20px;
+        outline: none;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar {
+        position: relative;
+        top: 0;
+        color: #000;
+        width: 100%;
+        height: 2.5rem;
+        border-radius: 10px;
+        opacity: 100%;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar:hover {
+        color: #111;
+        opacity: 100%;
+        background: #111;
+        outline: 1px solid #00ffff;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar svg {
+        transform: translate(0);
+        transform: translateY(-40px);
+        color: #00ffff;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar:hover svg {
+        color: #00ffff;
+        transform: translate(0px);
+        transform: translateY(0px);
+    }
+}
+
+
+
+/* ajuste de 400px a 320px */
+@media screen and (max-width: 400px) {
+    #contenedor .cajatextara .caja-botones .limpiar {
+        position: fixed;
+        top: 70vh;
+        right: 0;
+        color: #00ffff;
+        opacity: 20%;
+        border: 0;
+        border-radius: 10px 0 0 10px;
+        outline: none;
+        width: 40px;
+        height: 40px;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar:hover {
+        color: #00ffff;
+        opacity: 100%;
+        background: #00ffff;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar svg {
+        transform: translate(0);
+        color: #000;
+    }
+    #contenedor .cajatextara .caja-botones .limpiar:hover svg {
+        color: #000;
+        transform: translate(0px);
+    }
+}
